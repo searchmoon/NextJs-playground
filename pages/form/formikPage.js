@@ -7,7 +7,7 @@ const initialValues = {
     gender: '',
 }
 
-const FormikPage = () => {
+const FormikTutorial = () => {
     const handleSubmitForm = useCallback((values) => {
         console.log(values)
     }, [])
@@ -36,4 +36,4 @@ const FormikPage = () => {
     )
 }
 
-export default FormikPage;
+export default FormikTutorial;

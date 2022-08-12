@@ -14,7 +14,8 @@ export default function Home() {
             <div>
                 <h2>form</h2>
                 <ul>
-                    <li><Link href={'/form/formik'}>formik 예제</Link></li>
+                    <li><Link href={'/form/formikPage'}>formik 예제</Link></li>
+                    <li><Link href={'/form/registerForm'}></Link></li>
                 </ul>
             </div>
         </div>
