@@ -18,7 +18,8 @@ export default function Home() {
                     <li><Link href={'/form/registerForm'}>formik 예제2</Link></li>
                     <li><Link href={'/hooks/00-useState'}>useState 예제1</Link></li>
                     <li><Link href={'/hooks/01-useState-input'}>useState 예제2</Link></li>
-                    <li><Link href={'/array/00-array-rendering'}>array 예제2</Link></li>
+                    <li><Link href={'/array/00-array-rendering'}>array 예제1</Link></li>
+                    <li><Link href={'/array/01-array-addList'}>array 예제2</Link></li>
                     <li><Link href={'/props/00-defaultprops'}>props 예제1</Link></li>
                     <li><Link href={'/props/01-props.children'}>props 예제2</Link></li>
                     <li><Link href={'/rendering/00-conditional-rendering'}>rendering 예제1</Link></li>
