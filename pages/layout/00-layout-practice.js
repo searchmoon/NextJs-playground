@@ -1,41 +1,41 @@
 import React from "react";
-import { DefaultLayout } from "../../components/layout";
+import {DefaultLayout} from "../../components/layout";
 import styled from "@emotion/styled";
-import { respSize } from "../../components/common";
+import {respSize} from "../../components/common";
 
 const LayoutPractice = () => {
-  return (
-    <Layout>
-      <DefaultLayout>
-        <p>재개발 할 카드를 선택해 주세요</p>
-        <div className={"wrap-flex"}>
-          <SelectRebuildCard>
-            <div className={"main-card"}>
-              <div className={"img-wrap"}>
-                <img
-                  src={
-                    "https://d2jneiw56ezkg5.cloudfront.net/card/gangnamgu/single_story_house1406.png"
-                  }
-                />
-                <button className={"change-btn"}>교체</button>
-              </div>
-              <button className={"select-btn"}>카드선택</button>
-            </div>
-            <div className={"card-info"}></div>
-          </SelectRebuildCard>
-          <WrapMaterials>
-            <div className={"material-boxs"}>
-              <div className={"material-box"}>카드</div>
-              <div className={"material-box"}>카드</div>
-              <div className={"material-box"}>카드</div>
-              <div className={"material-box"}>카드</div>
-            </div>
-            <button className={"select-btn"}>카드선택</button>
-          </WrapMaterials>
-        </div>
-      </DefaultLayout>
-    </Layout>
-  );
+    return (
+        <Layout>
+            <DefaultLayout>
+                <p>재개발 할 카드를 선택해 주세요</p>
+                <div className={"wrap-flex"}>
+                    <SelectRebuildCard>
+                        <div className={"main-card"}>
+                            <div className={"img-wrap"}>
+                                <img
+                                    src={
+                                        "https://d2jneiw56ezkg5.cloudfront.net/card/gangnamgu/single_story_house1406.png"
+                                    }
+                                />
+                                <button className={"change-btn"}>교체</button>
+                            </div>
+                            <button className={"select-btn"}>카드선택</button>
+                        </div>
+                        <div className={"card-info"}></div>
+                    </SelectRebuildCard>
+                    <WrapMaterials>
+                        <div className={"material-boxs"}>
+                            <div className={"material-box"}>카드</div>
+                            <div className={"material-box"}>카드</div>
+                            <div className={"material-box"}>카드</div>
+                            <div className={"material-box"}>카드</div>
+                        </div>
+                        <button className={"select-btn"}>카드선택</button>
+                    </WrapMaterials>
+                </div>
+            </DefaultLayout>
+        </Layout>
+    );
 };
 
 const Layout = styled.div`
@@ -124,7 +124,6 @@ const SelectRebuildCard = styled.div`
   @media (max-width: ${respSize.mobile}px) {
     flex-direction: column;
     padding: 24px 24px;
-
     .main-card {
       margin: 0 auto;
       max-width: 319px;
