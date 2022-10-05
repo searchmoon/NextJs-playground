@@ -1,5 +1,5 @@
 import {useRequestQuery} from "../hooks/NetworkCustomHooks";
-import {useCallback, useState} from "react";
+import React, {useCallback, useState} from "react";
 
 function GetList() {
     const createRequest = useRequestQuery();
@@ -10,14 +10,16 @@ function GetList() {
                 .get('http://localhost:8080/sample/list')
                 .setSilent()
                 .setSuccessFunc((resp) => {
-                    setData(resp)
                     console.log(resp)
+                    setData(resp)
                 })
                 .run();
         }, [createRequest])
+
     return (
         <>
-            <button onClick={handleGetList}>Get List{data}</button>
+            <button onClick={handleGetList}>Get List</button>
+            {data.map((item, i) => <li key={i}>이름: {item.name} 직업: {item.desc} 나이: {item.level}</li>)}
         </>
     )
 
