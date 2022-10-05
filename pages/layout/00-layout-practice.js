@@ -10,27 +10,26 @@ const LayoutPractice = () => {
                 <p>재개발 할 카드를 선택해 주세요</p>
                 <div className={"wrap-flex"}>
                     <SelectRebuildCard>
-                        <div className={"main-card"}>
-                            <div className={"img-wrap"}>
+                        <div className={'main-card'}>
+                            <div className={'img-wrap'}>
                                 <img
-                                    src={
-                                        "https://d2jneiw56ezkg5.cloudfront.net/card/gangnamgu/single_story_house1406.png"
-                                    }
-                                />
-                                <button className={"change-btn"}>교체</button>
+                                    src={'https://d2jneiw56ezkg5.cloudfront.net/card/gangnamgu/single_story_house1406.png'}/>
+                                <button className={'change-btn'}>교체</button>
                             </div>
-                            <button className={"select-btn"}>카드선택</button>
+                            <button className={'select-btn'}>카드선택</button>
                         </div>
-                        <div className={"card-info"}></div>
+                        <div className={'card-info'}>
+                        </div>
                     </SelectRebuildCard>
                     <WrapMaterials>
                         <div className={"material-boxs"}>
+
                             <div className={"material-box"}>카드</div>
                             <div className={"material-box"}>카드</div>
                             <div className={"material-box"}>카드</div>
                             <div className={"material-box"}>카드</div>
                         </div>
-                        <button className={"select-btn"}>카드선택</button>
+                        <button className={'select-btn'}>카드선택</button>
                     </WrapMaterials>
                 </div>
             </DefaultLayout>
@@ -149,7 +148,7 @@ const SelectRebuildCard = styled.div`
 `;
 
 const WrapMaterials = styled.div`
-  max-width: 355px;
+< < < < < < < HEAD = = = = = = = > > > > > > > 8 c0b5a8(데이터 받아오기)max-width: 355 px;
   width: 100%;
   min-height: 600px;
   border-radius: 16px;
@@ -171,8 +170,12 @@ const WrapMaterials = styled.div`
   .select-btn {
     display: block;
     padding: 16px 27px;
-    background: #5b15d5;
-    border-radius: 24px;
+  < < < < < < < HEAD background: #5b15d5;
+  = = = = = = = background: #5B15D5;
+
+    > > > > > > >
+
+    8 c0b5a8 (데이터 받아오기)border-radius: 24 px;
     border: none;
     margin: 60px auto 63px;
   }
