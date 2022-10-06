@@ -35,7 +35,8 @@ export default function Home() {
                     <br/>
                     <Link href={"/layout/00-layout-practice"}>layout 연습</Link>
                     <br/>
-                    <Link href={"/api/get-list"}>데이터 받아오기 연습</Link>
+                    <Link href={"/test/get-list"}>데이터 받아오기 연습(get)</Link>
+                    <Link href={"/test/post-list"}>데이터 받아오기 연습(post)</Link>
                 </ul>
             </div>
         </div>

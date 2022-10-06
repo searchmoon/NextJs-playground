@@ -215,7 +215,7 @@ export class CfRequest {
                 /**
                  * 에러 코드가 있는 경우
                  */
-                if (response.data.errorCode != undefined) {
+                if (response.data.errorCode != undefined && response.data.errorCode !== 'VALIDATION') {
                     const errorCode = response.data.errorCode;
                     if (this.errorHandlerWithCodeMap.has(errorCode)) {
                         const handler = this.errorHandlerWithCodeMap.get(errorCode);
@@ -243,14 +243,15 @@ export class CfRequest {
                 /**
                  * 밸리데이션 실패 에러인 경우
                  */
-                if (response.status == 400 && Array.isArray(response.data) && this.formikRef != null) {
+                if (response.status === 400 && Array.isArray(response.data.errors) && this.formikRef != null) {
                     const error = {};
-                    for (let i = 0; i < response.data.length; i++) {
-                        const err = response.data[i];
-                        if (error.hasOwnProperty(err.field)) {
-                            error[err.field] += err.message;
+                    const errors = response.data.errors;
+                    for (let i = 0; i < errors.length; i++) {
+                        const err = errors[i];
+                        if (error.hasOwnProperty(err.name)) {
+                            error[err.name] += err.desc;
                         } else {
-                            error[err.field] = err.message;
+                            error[err.name] = err.desc;
                         }
                     }
                     this.formikRef.setErrors(error);
