@@ -21,6 +21,8 @@ export default function Home() {
                     <br/>
                     <Link href={"/hooks/01-useState-input"}>useState 예제2</Link>
                     <br/>
+                    <Link href={"/hooks/02-useRef"}>useRef 예제1</Link>
+                    <br/>
                     <Link href={"/array/00-array-rendering"}>array 예제1</Link>
                     <br/>
                     <Link href={"/array/01-array-addList"}>array 예제2</Link>
@@ -36,6 +38,7 @@ export default function Home() {
                     <Link href={"/layout/00-layout-practice"}>layout 연습</Link>
                     <br/>
                     <Link href={"/test/get-list"}>데이터 받아오기 연습(get)</Link>
+                    <br/>
                     <Link href={"/test/post-list"}>데이터 받아오기 연습(post)</Link>
                 </ul>
             </div>

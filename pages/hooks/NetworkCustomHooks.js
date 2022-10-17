@@ -3,6 +3,30 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useRouter} from "next/router";
 import axios from "axios";
 
+
+export function useLoadData(initial = null) {
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [data, setData] = useState(initial);
+    const createRequest = useRequestQuery();
+    const getReq = useCallback(() => {
+        const callReq = createRequest()
+            .setOptions({
+                beforeCallFunc: () => {
+                    setLoading(true);
+                },
+                afterCallFunc: () => {
+                    setLoading(false);
+                    setError(null);
+                },
+            })
+            .setErrorMsgFunc(setLoading, setError);
+        return callReq;
+    }, [createRequest]);
+
+    return [getReq, setData, {loading, data, error}, loading, data, error, setLoading, setError];
+}
+
 export class CfRequest {
     constructor(errorMsg500, errorMsg500Func) {
         this.successFunc = () => {
@@ -50,6 +74,12 @@ export class CfRequest {
     post(url) {
         this.url = url;
         this.requestType = 'post';
+        return this;
+    }
+
+    method(url, requestType) {
+        this.requestType = requestType || 'get';
+        this.url = url;
         return this;
     }
 
@@ -204,7 +234,7 @@ export class CfRequest {
             // console.log('axios response', response);
 
             if (response.status === 200 || response.status === 201) {
-                return await this.successFunc(response.data);
+                return await this.successFunc(response.data.data);
                 /**
                  * 서버 상태가 200이 아닌 경우
                  */
