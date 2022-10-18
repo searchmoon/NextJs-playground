@@ -245,8 +245,8 @@ export class CfRequest {
                 /**
                  * 에러 코드가 있는 경우
                  */
-                if (response.data.errorCode != undefined && response.data.errorCode !== 'VALIDATION') {
-                    const errorCode = response.data.errorCode;
+                if (response.data.error != undefined && response.data.error !== 'VALIDATION') {
+                    const errorCode = response.data.error;
                     if (this.errorHandlerWithCodeMap.has(errorCode)) {
                         const handler = this.errorHandlerWithCodeMap.get(errorCode);
                         if (typeof handler === 'string') {
