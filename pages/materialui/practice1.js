@@ -76,3 +76,5 @@ export default Practice1;
 //Grid : grid는 바깥쪽 부모인 container 속성, 자식인 item 을 설정하고 xs로 크기를 정해준다. xs는 합쳐서 12가 나오게 한다.
 
 //Dialog : 를 통한 모달창? 만들기.
+
+//생활코딩 https://www.youtube.com/watch?v=or3np70c7zU 참고

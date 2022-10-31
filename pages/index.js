@@ -41,7 +41,9 @@ export default function Home() {
                     <br/>
                     <Link href={"/test/post-list"}>데이터 받아오기 연습(post)</Link>
                     <br/>
-                    <Link href={"/materialui/practice"}>material ui 연습</Link>
+                    <Link href={"/materialui/practice1"}>material ui 연습</Link>
+                    <br/>
+                    <Link href={"/materialui/login"}>material ui 로그인 기능 연습</Link>
                 </ul>
             </div>
         </div>
