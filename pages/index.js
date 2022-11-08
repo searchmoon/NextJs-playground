@@ -45,6 +45,10 @@ export default function Home() {
                     <br/>
                     <Link href={"/materialui/login"}>material ui 로그인 기능 연습</Link>
                 </ul>
+                <h2>etc</h2>
+                <Link href={'/table/00-text-to-table'}>text to table</Link>
+                <h2>Libs</h2>
+                <Link href={'/lib/reactquery/00-first'}>First</Link>
             </div>
         </div>
     );
