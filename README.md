@@ -28,7 +28,8 @@ useErrorBoundary: (error) => {
 
 
 # 소개
--  https://tech.kakao.com/2022/06/13/react-query/
+- 카카오 톡FE파트 :   https://tech.kakao.com/2022/06/13/react-query/
+- 로스템? https://blog.rhostem.com/posts/2021-02-01T00:00:00.000Z
 
 # 에러처리
 - 화해블로그 :  http://blog.hwahae.co.kr/all/tech/tech-tech/7867/

@@ -1,15 +1,14 @@
 import {error} from "next/dist/build/output/log";
 
-
+/**
+ * 참고 링크 : https://tecoble.techcourse.co.kr/post/2021-10-01-react-query-error-handling/
+ */
 export default class CustomError extends Error{
 
-    constructor(axiosResp, errorHandler) {
-        super();
+    constructor(message, axiosResp, errorHandler) {
+        super(message);
         console.log('In Custom Error :' , axiosResp);
-        this.message = axiosResp.message;
-        this.error = axiosResp.error;
-        this.errors = axiosResp.errors;
-        this.status = axiosResp.status;
+        this.axiosResp = axiosResp;
         this.errorHandler = errorHandler;
     }
 

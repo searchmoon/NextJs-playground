@@ -48,7 +48,9 @@ export default function Home() {
                 <h2>etc</h2>
                 <Link href={'/table/00-text-to-table'}>text to table</Link>
                 <h2>Libs</h2>
-                <Link href={'/lib/reactquery/00-first'}>First</Link>
+                <Link href={'/lib/reactquery/read/00-first'}>기본적인 성공 화면 : </Link>
+                <Link href={'/lib/reactquery/read/01-error'}>Error</Link>
+                <Link href={'/lib/reactquery/write/00-form'}>Form </Link>
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
 
 import axios from "axios";
-import ErrorBoundary from "../../../components/wrapper/ErrorBoundary";
+import ErrorBoundary from "../../../../components/wrapper/ErrorBoundary";
 
 async function fetchCompanies() {
     return axios.get(`http://localhost:8080/sample-list?timeout=1000`).then((resp) => resp.data);

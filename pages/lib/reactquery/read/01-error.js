@@ -2,8 +2,8 @@ import React from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
 
 import axios from "axios";
-import ErrorBoundary from "../../../components/wrapper/ErrorBoundary";
-import CustomError from "../../../components/error/CustomError";
+import ErrorBoundary from "../../../../components/wrapper/ErrorBoundary";
+import CustomError from "../../../../components/error/CustomError";
 
 async function fetchCompanies() {
     const url = `http://localhost:8080/sample-list?timeout=1000&needError=true`;
@@ -21,8 +21,10 @@ async function fetchCompanies() {
     }else{
         console.log('error status code :', response.status);
         console.log('error status data :', response.data);
-        throw new CustomError(response.data);
+        throw new CustomError('테스트 에러 메시지', response.data);
     }
+
+
 }
 
 const FirstExample = () => {
@@ -35,11 +37,9 @@ const FirstExample = () => {
     } = useQuery(["sample-list"], fetchCompanies, {
         // 🚀 only server errors will go to the Error Boundary
         useErrorBoundary: (error) => {
+           console.log('ErrorBoundary ::  useErrorBoundary : ', error);
            return true;
         },
-        onError: (error) => {
-            console.log('error :', error);
-        }
     });
 
     if (isLoading) {
@@ -52,13 +52,13 @@ const FirstExample = () => {
     }
 
     return (
-        <ErrorBoundary>
+        <>
             error : {error?.toString()} <br /> isError: {isError.toString()} <br />
             <hr/>
             {data?.data?.map((item, idx) => {
                 return <div key={idx}> 이름 : {item.name}, {item.username} , {item.password} </div>;
             })}
-        </ErrorBoundary>
+        </>
     );
 }
 
