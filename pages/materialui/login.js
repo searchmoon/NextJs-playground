@@ -38,6 +38,9 @@ const Login = () => {
                            label="Email Address"
                            name="email"
                            autoComplete="email"
+                           sx={{
+                               backgroundColor: 'white',
+                           }}
                            autoFocus/>
                 <TextField margin="normal"
                            required

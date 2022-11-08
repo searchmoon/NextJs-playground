@@ -43,7 +43,9 @@ export default function Home() {
                     <br/>
                     <Link href={"/materialui/practice1"}>material ui 연습</Link>
                     <br/>
-                    <Link href={"/materialui/login"}>material ui 로그인 기능 연습</Link>
+                    <Link href={"/materialui/login"}>material ui 로그인 화면 연습</Link>
+                    <br/>
+                    <Link href={"/materialui/practice2"}>material ui 연습 2</Link>
                 </ul>
                 <h2>etc</h2>
                 <Link href={'/table/00-text-to-table'}>text to table</Link>
