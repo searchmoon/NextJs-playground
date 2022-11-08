@@ -1,31 +1,8 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query'
 
-import axios from "axios";
-import ErrorBoundary from "../../../../components/wrapper/ErrorBoundary";
-import CustomError from "../../../../components/error/CustomError";
+import {axiosWrapper} from "../../../../components/common/axiosWrapper";
 
-async function fetchCompanies() {
-    const url = `http://localhost:8080/sample-list?timeout=1000&needError=true`;
-    const config = {
-        url,
-        method: 'get',
-        timeout: 4000,
-        validateStatus: () => {
-            return true;
-        },
-    }
-    const response = await axios(config);
-    if(response.status === 200 || response.status === 201){
-        return response.data;
-    }else{
-        console.log('error status code :', response.status);
-        console.log('error status data :', response.data);
-        throw new CustomError('테스트 에러 메시지', response.data);
-    }
-
-
-}
 
 const FirstExample = () => {
 
@@ -34,7 +11,7 @@ const FirstExample = () => {
         data,
         isError,
         error,
-    } = useQuery(["sample-list"], fetchCompanies, {
+    } = useQuery(["sample-list"], axiosWrapper(`http://localhost:8080/sample-list?timeout=1000&needError=true`), {
         // 🚀 only server errors will go to the Error Boundary
         useErrorBoundary: (error) => {
            console.log('ErrorBoundary ::  useErrorBoundary : ', error);
