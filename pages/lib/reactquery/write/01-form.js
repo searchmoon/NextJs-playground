@@ -6,26 +6,24 @@ import {Field, Formik} from "formik";
 const initialValues = {
   name: '',
   age: '',
-  gender: '',
+  password: '',
+  username: '',
 };
 
 
 function App2() {
   const mutation = useMutation(newTodo => {
-    return axios.post('http://localhost:8080/create?timeout=5000', newTodo)
+    axios.post('http://localhost:8080/create?timeout=2000', newTodo);
   })
 
-  const handleSubmitForm = () => {
+  const handleSubmitForm = useCallback((values) => {
     mutation.mutate({
       id: new Date(),
       title: 'Do Laundry',
-      username: 'test',
-      password: 'test',
-      age: 20,
-      name: 'test'
+      ...values
     })
-    console.log('mutation', mutation);
-  }
+    console.log(values)
+  }, [mutation])
 
   return (
     <div>
@@ -55,10 +53,10 @@ function App2() {
                   password: <Field name="password"/>
                 </div>
                 <div>
-
+                  username: <Field name="username"/>
                 </div>
                 <button
-                  onClick={handleSubmit}
+                  type="submit" onClick={handleSubmit}
                 >
                   Create Todo
                 </button>
